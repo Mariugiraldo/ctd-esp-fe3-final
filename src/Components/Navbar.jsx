@@ -2,8 +2,6 @@ import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
 
@@ -24,8 +22,6 @@ const Navbar = () => {
     <Fragment>
       <div className="navbar-container">
         <nav className="">
-          {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-          {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
           <h1>
             <img src="DH.ico"></img> Odonto
           </h1>

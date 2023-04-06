@@ -1,17 +1,31 @@
-import React from 'react'
-import Card from '../Components/Card'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, {Fragment, useEffect, useState} from "react";
+import DentistsTable from "../Components/DentistsTable";
 
 const Home = () => {
-  return (
-    <main className="" >
-      <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
-      </div>
-    </main>
-  )
-}
+    const url = "https://jsonplaceholder.typicode.com/users";
+    const [dentists, setDentists] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-export default Home
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setDentists(data)
+                setLoading(false);
+            });
+    }, [loading]);
+
+    return (
+        <Fragment>
+            {loading ? 'Cargando...' :
+                <Fragment>
+                    <div className="content-top-margin">
+                        <h1>HOME</h1>
+                        <DentistsTable dentists={dentists}></DentistsTable>
+                    </div>
+                </Fragment>}
+        </Fragment>
+    );
+};
+
+export default Home;
