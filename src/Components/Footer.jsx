@@ -1,11 +1,17 @@
 import React from 'react'
 
+
+
 const Footer = () => {
   return (
-    <footer>
-        <p>Powered by MEG</p>
-        <img src="./img/DH.png" alt='DH-logo' />
-    </footer>
+    <div className='footer'>
+    <footer className="footer > img">
+
+        <p>Powered by MEG y ADG</p>
+        <img src="images/DH.png"></img>
+        </footer>
+     </div>
+    
   )
 }
 

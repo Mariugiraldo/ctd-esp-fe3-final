@@ -7,13 +7,14 @@ import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import Featured from "./Components/Featured";
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/favs" element={<Featured />} />
         </Routes>
