@@ -162,3 +162,7 @@ tr:nth-child(even) {
 .content-top-margin{
   margin-top: 11%;
 }
+
+.form-spacer {
+  margin-top: 10px;
+}
