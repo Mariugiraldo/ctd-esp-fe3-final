@@ -3,9 +3,9 @@ import "./index.css";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import Contact from "./Components/Contact";
-import Featured from "./Components/Featured";
+import Home from "./Routes/Home";
+import Contact from "./Routes/Contact";
+import Favorites from "./Routes/Favorites";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/favs" element={<Featured />} />
+          <Route path="/favs" element={<Favorites />} />
         </Routes>
         <Footer />
       </BrowserRouter>
