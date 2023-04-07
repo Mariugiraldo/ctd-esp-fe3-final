@@ -1,6 +1,6 @@
-import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
+import {MdBrightnessHigh, MdBrightnessLow } from "react-icons/all";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -26,11 +26,11 @@ const Navbar = () => {
             <img src="DH.ico"></img> Odonto
           </h1>
           <menu className="nav-menu">
-            <Link to="/">Home</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/favs">Favs</Link>
+            <h3><Link to="/">Home</Link></h3>
+            <h3><Link to="/contact">Contact</Link></h3>
+            <h3><Link to="/favs">Favs</Link></h3>
             <a onClick={toggleTheme}>
-              {theme == "dark" ? <MdOutlineDarkMode /> : <MdDarkMode />}
+              {theme == "dark" ? <MdBrightnessLow size={60}/> : <MdBrightnessHigh size={60}/>}
             </a>
           </menu>
         </nav>

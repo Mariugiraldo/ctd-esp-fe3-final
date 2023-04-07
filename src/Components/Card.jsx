@@ -1,5 +1,7 @@
 import React, {Fragment, useEffect, useState} from "react";
-import {MdOutlineStar, MdOutlineStarOutline} from "react-icons/md";
+import { MdStar, MdStarBorder} from "react-icons/md";
+import {Link} from "react-router-dom";
+import {contextDentistDetail} from "./utils/global.context";
 
 const Card = ({dentist, toggleFn}) => {
 
@@ -21,10 +23,13 @@ const Card = ({dentist, toggleFn}) => {
                 <div className="img-container">
                     <img src="images/doctor.jpg"></img>
                 </div>
-                <h3>{dent.name}</h3>
+                <Link to={`/dentist/${dent.id}`} onClick={() => contextDentistDetail(dentist)}>
+                    <h3>{dent.name}</h3>
+                </Link>
                 <h4>{dent.username}</h4>
                 <button onClick={toggle} className="favButton">
-                    {dent.featured ? <><MdOutlineStar/> Remove from favorites</> : <><MdOutlineStarOutline/> Add to favorites</>}
+                    {dent.featured ? <><MdStar color={"gold"} size={60} /></>
+                        : <><MdStarBorder color={"gold"} size={60}/></>}
                 </button>
             </div>
         </Fragment>
